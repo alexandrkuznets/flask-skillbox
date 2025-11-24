@@ -36,8 +36,8 @@ def create_app():
                 name=name,
                 surname=surname,
                 credit_card=credit_card,
-                car_number=car_number
-                )
+                car_number=car_number,
+            )
 
             db.session.add(new_client)
             db.session.commit()
@@ -58,7 +58,7 @@ def create_app():
             address=address,
             opened=True,
             count_places=count_places,
-            count_available_places=count_places
+            count_available_places=count_places,
         )
 
         db.session.add(new_parking)
@@ -94,7 +94,6 @@ def create_app():
             client_parkings.time_out = datetime.datetime.now()
             db.session.commit()
             return "", 201
-
 
     return app
 
