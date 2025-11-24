@@ -9,7 +9,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r requirements.txt
-      - run: pytest module_30_ci_linters/homework/hw1/tests
+      - run: pytest module_30_ci_linters/homework/hw1/tests/tests_app.py
       - run: black --diff --check module_30_ci_linters/homework/hw1/main
       - run: isort --check-only --diff module_30_ci_linters/homework/hw1/main
       - run: mypy module_30_ci_linters/homework/hw1/main
