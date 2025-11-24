@@ -86,7 +86,7 @@ def create_app():
                 return "", 201
             return "The parking lot is closed or there are no free spaces", 200
         elif request.method == "DELETE":
-            client_parkings = ( 
+            client_parkings = (
                 db.session.query(ClientParking)
                 .filter_by(parking_id=parking_id, client_id=client_id)
                 .first()
