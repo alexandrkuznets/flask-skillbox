@@ -40,4 +40,3 @@ class ClientParking(db.Model):
     parking_id = db.Column(db.Integer, db.ForeignKey("parking.id"))
     time_in = db.Column(db.DateTime)
     time_out = db.Column(db.DateTime)
-
