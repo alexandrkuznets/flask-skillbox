@@ -1,8 +1,9 @@
 import datetime
+from typing import Dict, List
 
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
-from typing import Dict, List
+
 
 db = SQLAlchemy()
 
@@ -13,7 +14,7 @@ def create_app():
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
 
-    from .models import Client, Parking, ClientParking
+    from .models import Client, ClientParking, Parking 
 
     @app.teardown_appcontext
     def shutdown_session(exception=None):
