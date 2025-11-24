@@ -5,3 +5,4 @@ flake8-pie==0.16.0
 isort==7.0.0
 mypy==1.18.2
 pytest==9.0.1
+flask==2.2.5
