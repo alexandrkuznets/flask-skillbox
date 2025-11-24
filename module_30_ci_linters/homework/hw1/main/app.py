@@ -46,7 +46,7 @@ def create_app():
 
     @app.route("/clients/<int:client_id>", methods=["GET"])
     def get_client(client_id: int):
-        client: Client = db.session.query(Client).get(client_id)
+        client: Optional[Client] = db.session.query(Client).get(client_id)
         if client is not None:
             return jsonify(client.to_json()), 200
         return jsonify({"message": "No clients"})
