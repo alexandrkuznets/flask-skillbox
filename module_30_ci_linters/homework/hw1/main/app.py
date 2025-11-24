@@ -22,7 +22,7 @@ def create_app():
     @app.route("/clients", methods=["GET", "POST"])
     def get_clients():
         if request.method == "GET":
-            clients: List[Client] = db.session.query(Client).all()
+            clients = db.session.query(Client).all()
             clients_list = [c.to_json() for c in clients]
             return jsonify(clients_list), 200
 
@@ -46,7 +46,7 @@ def create_app():
 
     @app.route("/clients/<int:client_id>", methods=["GET"])
     def get_client(client_id: int):
-        client: Client = db.session.query(Client).get(client_id)
+        client = db.session.query(Client).get(client_id)
         return jsonify(client.to_json()), 200
 
     @app.route("/parkings", methods=["POST"])
